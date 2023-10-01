@@ -1,0 +1,54 @@
+name: Update RKS list
+on:
+  schedule:
+    - cron: '0 0 * * 0'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout current repo
+        uses: actions/checkout@v3
+
+      - name: Pull list of blocked domains
+        run: |
+          curl -s https://reestr.rublacklist.net/api/v3/domains/ |\
+          tr -d '[]"' |\
+          sed 's/,\ /\n/g' |\
+          sort -u |\
+          grep -e 'xn--p1ai$\|.ru$\|.by$\|.xn--90ais$'\
+          > ./custom_rules/rks-local-domain
+
+      - name: Prepare dictionary temp folder
+        run: |
+          mkdir temp
+          cp ./custom_rules/*domain ./temp
+
+      - name: Checkout repo with dat-file building util
+        uses: actions/checkout@v3
+        with:
+          repository: v2fly/domain-list-community
+          path: ./domain-list-community
+
+      - name: Setup Go for dat-file building util
+        uses: actions/setup-go@v4
+        with:
+          go-version-file: domain-list-community/go.mod
+
+      - name: Build custom.dat file
+        run: |
+          cd domain-list-community || exit 1
+          go run ./ --datapath=../temp --outputdir=../
+          cd ../ && rm -rf domain-list-community temp
+          mv dlc.dat custom.dat
+
+      - name: Commit new lists
+        run: |
+          git add ./custom_rules/*
+          git add ./custom.dat
+
+          git config --global user.email "autobot@example.com"
+          git config --global user.name "Autobot"
+          git commit -am "Update rublacklist domains -- $(date +%Y-%m-%d)"
+          git push
