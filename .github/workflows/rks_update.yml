@@ -54,6 +54,7 @@ jobs:
           git push
 
       - name: Copy 
+        if: always()
         uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.HOST }}
@@ -64,6 +65,7 @@ jobs:
           target: ${{ secrets.RAYRAY_PATH }}/geodat
 
       - name: Restart docker service
+        if: always()
         uses: appleboy/ssh-action@v1.0.3
         env:
           RAYRAY_PATH: ${{ secrets.RAYRAY_PATH }}
