@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout current repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@master
 
       - name: Pull list of blocked domains
         run: |
@@ -26,13 +26,13 @@ jobs:
           cp ./custom_rules/*domain ./temp
 
       - name: Checkout repo with dat-file building util
-        uses: actions/checkout@v3
+        uses: actions/checkout@master
         with:
           repository: v2fly/domain-list-community
           path: ./domain-list-community
 
       - name: Setup Go for dat-file building util
-        uses: actions/setup-go@v4
+        uses: actions/setup-go@master
         with:
           go-version-file: domain-list-community/go.mod
 
@@ -55,7 +55,7 @@ jobs:
 
       - name: Copy 
         if: always()
-        uses: appleboy/scp-action@v0.1.7
+        uses: appleboy/scp-action@master
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
@@ -63,10 +63,11 @@ jobs:
           port: ${{ secrets.PORT }}
           source: "rks.dat"
           target: ${{ secrets.RAYRAY_PATH }}/geodat
+          overwrite: true
 
       - name: Restart docker service
         if: always()
-        uses: appleboy/ssh-action@v1.0.3
+        uses: appleboy/ssh-action@master
         env:
           RAYRAY_PATH: ${{ secrets.RAYRAY_PATH }}
         with:
