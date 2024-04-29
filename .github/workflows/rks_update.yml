@@ -41,14 +41,39 @@ jobs:
           cd domain-list-community || exit 1
           go run ./ --datapath=../temp --outputdir=../
           cd ../ && rm -rf domain-list-community temp
-          mv dlc.dat custom.dat
+          mv dlc.dat rks.dat
 
       - name: Commit new lists
         run: |
           git add ./custom_rules/*
-          git add ./custom.dat
+          git add ./rks.dat
 
           git config --global user.email "autobot@example.com"
           git config --global user.name "Autobot"
           git commit -am "Update rublacklist domains -- $(date +%Y-%m-%d)"
           git push
+
+      - name: Copy 
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          port: ${{ secrets.PORT }}
+          source: "rks.dat"
+          target: ${{ secrets.RAYRAY_PATH }}/geodat
+
+      - name: Restart docker service
+        uses: appleboy/ssh-action@v1.0.3
+        env:
+          RAYRAY_PATH: ${{ secrets.RAYRAY_PATH }}
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          port: ${{ secrets.PORT }}
+          script_stop: true
+          envs: RAYRAY_PATH
+          script: |
+            cd $RAYRAY_PATH || exit
+            docker compose restart
