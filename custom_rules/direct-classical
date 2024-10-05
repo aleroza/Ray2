@@ -7,3 +7,5 @@ DOMAIN-KEYWORD,mixlib
 
 # Fix for google's push notifications
 DOMAIN-REGEX,^.*mtalk.*google.com
+DOMAIN,android.clients.google.com
+DOMAIN,device-provisioning.googleapis.com
