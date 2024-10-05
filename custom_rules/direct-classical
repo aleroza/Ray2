@@ -4,3 +4,6 @@ DOMAIN-SUFFIX,novel.tl
 DOMAIN-KEYWORD,mangalib
 DOMAIN-KEYWORD,imgslib
 DOMAIN-KEYWORD,mixlib
+
+# Fix for google's push notifications
+DOMAIN-REGEX,^.*mtalk.*google.com
