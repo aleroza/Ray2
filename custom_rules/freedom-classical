@@ -1,4 +1,1 @@
 DOMAIN-SUFFIX,ficbook.net
-
-# Discord and UDP
-AND,((DOMAIN-REGEX,.*discord.*\.(net|com|gg)),(NETWORK,UDP))
