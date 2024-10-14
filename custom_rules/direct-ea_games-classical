@@ -1,5 +1,0 @@
-# Try to fix game not starting
-PROCESS-NAME-REGEX,.*bfv.*
-PROCESS-NAME-REGEX,.*EAAntiCheat.*
-PROCESS-NAME-REGEX,.*EACefSubProcess.*
-PROCESS-NAME-REGEX,.*EADesktop.*
