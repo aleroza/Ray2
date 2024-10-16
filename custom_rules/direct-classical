@@ -9,8 +9,10 @@ DOMAIN-KEYWORD,mixlib
 
 # Fix for google's push notifications
 DOMAIN-REGEX,^.*mtalk.*google.com
-DOMAIN,android.clients.google.com
+DOMAIN,android.apis.google.com
 DOMAIN,device-provisioning.googleapis.com
+DOMAIN,firebaseinstallations.googleapis.com
+
 
 # Try to fix game not starting
 PROCESS-NAME-REGEX,.*bfv.*
