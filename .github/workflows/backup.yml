@@ -22,7 +22,6 @@ jobs:
           port: ${{ secrets.PORT }}
           script_stop: true
           script: |
-            b2 || exit
             b2 account authorize $STORAGE_API_ID $STORAGE_API_KEY
             mkdir BACKUP_TEMP
             docker-compose --project-directory ./$RAYRAY_PATH -f ./$RAYRAY_PATH/docker-compose.yaml down
