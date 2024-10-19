@@ -23,6 +23,7 @@ jobs:
           script_stop: true
           envs: RAYRAY_PATH,STORAGE_API_ID,STORAGE_API_KEY,BACKUP_ENCRYPTION_KEY
           script: |
+            set -x
             b2 account authorize $STORAGE_API_ID $STORAGE_API_KEY
             sudo rm -rf BACKUP_TEMP
             mkdir BACKUP_TEMP
