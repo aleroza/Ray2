@@ -1,0 +1,45 @@
+name: Update RKS list
+on:
+  schedule:
+    - cron: '0 1 * * 0'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create backup and upload it to network
+        uses: appleboy/ssh-action@master
+        env:
+          RAYRAY_PATH: ${{ secrets.RAYRAY_PATH }}
+          STORAGE_API_ID: ${{ secrets.STORAGE_API_ID }}
+          STORAGE_API_KEY: ${{ secrets.STORAGE_API_KEY }}
+          BACKUP_ENCRYPTION_KEY: ${{ secrets.BACKUP_ENCRYPTION_KEY }}
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          port: ${{ secrets.PORT }}
+          script_stop: true
+          script: |
+            b2 || exit
+            b2 account authorize $STORAGE_API_ID $STORAGE_API_KEY
+            mkdir BACKUP_TEMP
+            docker-compose --project-directory ./$RAYRAY_PATH -f ./$RAYRAY_PATH/docker-compose.yaml down
+            sudo rsync -av --progress ./$RAYRAY_PATH/ ./BACKUP_TEMP --exclude prometheus_data
+            docker-compose --project-directory ./$RAYRAY_PATH -f ./$RAYRAY_PATH/docker-compose.yaml up --project-directory
+      
+            cd BACKUP_TEMP
+            sudo tar -cf ./certs.tgz ./certs
+            sudo tar -cf ./var-lib-marz.tgz ./var-lib-marz
+      
+            ccrypt ./certs.tgz -eK $BACKUP_ENCRYPTION_KEY
+            ccrypt ./var-lib-marz.tgz -eK $BACKUP_ENCRYPTION_KEY
+            ccrypt ./.env -eK $BACKUP_ENCRYPTION_KEY
+      
+            time_stamp=$(date +%d-%m-%Y)
+            mkdir -p "${time_stamp}"
+      
+            b2 sync --exclude-dir-regex "certs|var-lib-marz" --dry-run ./ b2://ray2-backups/"${time_stamp}"
+            cd ..
+            rm -rf BACKUP_TEMP
