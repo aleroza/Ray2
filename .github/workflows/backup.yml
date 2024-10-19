@@ -26,11 +26,12 @@ jobs:
             b2 account authorize $STORAGE_API_ID $STORAGE_API_KEY
             sudo rm -rf BACKUP_TEMP
             mkdir BACKUP_TEMP
-            docker-compose --project-directory ./$RAYRAY_PATH -f ./$RAYRAY_PATH/docker-compose.yaml down
-            sudo rsync -av --progress ./$RAYRAY_PATH/ ./BACKUP_TEMP --exclude prometheus_data
-            docker-compose --project-directory ./$RAYRAY_PATH -f ./$RAYRAY_PATH/docker-compose.yaml up --project-directory
-      
-            cd BACKUP_TEMP
+            cd ~/$RAYRAY_PATH
+            docker-compose stop marzban
+            sudo rsync -av --progress ~/$RAYRAY_PATH/ ~/BACKUP_TEMP --exclude prometheus_data
+            docker-compose start marzban
+            
+            cd ~/BACKUP_TEMP
             sudo tar -cf ./certs.tgz ./certs
             sudo tar -cf ./var-lib-marz.tgz ./var-lib-marz
       
