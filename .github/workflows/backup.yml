@@ -1,4 +1,4 @@
-name: Update RKS list
+name: Create backup and upload it to network
 on:
   schedule:
     - cron: '0 1 * * 0'
