@@ -47,4 +47,4 @@ jobs:
       
             b2 sync --exclude-dir-regex "certs|var-lib-marz" --dry-run ./ b2://ray2-backups/"${time_stamp}"
             cd ..
-            rm -rf BACKUP_TEMP
+            sudo rm -rf BACKUP_TEMP
