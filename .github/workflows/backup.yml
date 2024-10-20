@@ -45,6 +45,6 @@ jobs:
             time_stamp=$(date +%d-%m-%Y)
             mkdir -p "${time_stamp}"
       
-            b2 sync --exclude-dir-regex "certs|var-lib-marz" --dry-run ./ b2://ray2-backups/"${time_stamp}"
+            b2 sync --exclude-dir-regex "certs|var-lib-marz" ./ b2://ray2-backups/"${time_stamp}"
             cd ..
             sudo rm -rf BACKUP_TEMP
