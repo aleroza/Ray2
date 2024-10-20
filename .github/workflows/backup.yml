@@ -30,6 +30,7 @@ jobs:
             mkdir BACKUP_TEMP
             cd ~/$RAYRAY_PATH
             docker-compose stop marzban
+            find ~/$RAYRAY_PATH -exec stat --format='%A %s %U %G %y %n' {} \; | grep -v 'prometheus_data' > ~/BACKUP_TEMP/status_file.txt
             sudo rsync -av --progress ~/$RAYRAY_PATH/ ~/BACKUP_TEMP --exclude prometheus_data
             docker-compose start marzban
             
@@ -37,8 +38,8 @@ jobs:
             sudo tar -cf ./certs.tgz ./certs
             sudo tar -cf ./var-lib-marz.tgz ./var-lib-marz
       
-            ccrypt ./certs.tgz -eK $BACKUP_ENCRYPTION_KEY
-            ccrypt ./var-lib-marz.tgz -eK $BACKUP_ENCRYPTION_KEY
+            sudo ccrypt ./certs.tgz -eK $BACKUP_ENCRYPTION_KEY
+            sudo ccrypt ./var-lib-marz.tgz -eK $BACKUP_ENCRYPTION_KEY
             ccrypt ./.env -eK $BACKUP_ENCRYPTION_KEY
       
             time_stamp=$(date +%d-%m-%Y)
