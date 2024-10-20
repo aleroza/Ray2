@@ -61,7 +61,7 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
           source: "rks.dat"
-          target: ${{ secrets.RAYRAY_PATH }}/geodat
+          target: "~/${{ secrets.RAYRAY_PATH }}/geodat"
           overwrite: true
 
       - name: Restart docker service
@@ -76,5 +76,5 @@ jobs:
           script_stop: true
           envs: RAYRAY_PATH
           script: |
-            cd $RAYRAY_PATH || exit
+            cd ~/$RAYRAY_PATH || exit
             docker compose restart
