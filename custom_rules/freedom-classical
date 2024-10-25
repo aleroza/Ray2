@@ -1,1 +1,4 @@
 DOMAIN-SUFFIX,ficbook.net
+
+# It can send udp in login
+DOMAIN-SUFFIX,openai.com
