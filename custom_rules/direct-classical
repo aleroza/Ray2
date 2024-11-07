@@ -7,12 +7,19 @@ DOMAIN-KEYWORD,mangalib
 DOMAIN-KEYWORD,imgslib
 DOMAIN-KEYWORD,mixlib
 
+## Players
+DOMAIN-KEYWORD,aniboom
+DOMAIN-KEYWORD,kodik
+
 # Fix for google's push notifications
 DOMAIN-REGEX,^.*mtalk.*google.com
 DOMAIN,android.apis.google.com
 DOMAIN,device-provisioning.googleapis.com
 DOMAIN,firebaseinstallations.googleapis.com
 
+
+## Games
+PROCESS-NAME-REGEX,Warhammer.*
 
 # Try to fix game not starting
 PROCESS-NAME-REGEX,.*bfv.*
