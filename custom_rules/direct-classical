@@ -19,7 +19,7 @@ DOMAIN,firebaseinstallations.googleapis.com
 
 
 ## Games
-PROCESS-NAME-REGEX,Warhammer.*
+PROCESS-NAME-REGEX,.*Warhammer.*
 
 # Try to fix game not starting
 PROCESS-NAME-REGEX,.*bfv.*
