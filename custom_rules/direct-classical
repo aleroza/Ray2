@@ -20,6 +20,14 @@ DOMAIN,firebaseinstallations.googleapis.com
 
 ## Games
 PROCESS-NAME-REGEX,.*Warhammer.*
+PROCESS-NAME-REGEX,.*League.*
+PROCESS-NAME-REGEX,.*Riot\s?Client.*
+
+
+## Programs
+PROCESS-NAME-REGEX,.*uTorrent.*
+PROCESS-NAME-REGEX,.*steam.*
+
 
 # Try to fix game not starting
 PROCESS-NAME-REGEX,.*bfv.*
@@ -27,4 +35,3 @@ PROCESS-NAME-REGEX,.*EAAntiCheat.*
 PROCESS-NAME-REGEX,.*EACefSubProcess.*
 PROCESS-NAME-REGEX,.*EADesktop.*
 PROCESS-NAME-REGEX,.*EABackgroundService.*
-PROCESS-NAME-REGEX,.*steam.*
