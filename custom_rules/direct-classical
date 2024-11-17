@@ -25,7 +25,6 @@ PROCESS-NAME-REGEX,.*Riot\s?Client.*
 
 
 ## Programs
-PROCESS-NAME-REGEX,.*uTorrent.*
 PROCESS-NAME-REGEX,.*steam.*
 
 
