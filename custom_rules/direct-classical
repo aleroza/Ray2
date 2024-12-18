@@ -25,10 +25,12 @@ PROCESS-NAME-REGEX,.*Riot\s?Client.*
 PROCESS-NAME-REGEX,.*SoTGame.*
 PROCESS-NAME-REGEX,.*helldivers2.*
 PROCESS-NAME-REGEX,.*bfv.*
+PROCESS-NAME-REGEX,.*EscapeFromTarkov.*
 
 
 ## Programs
 PROCESS-NAME-REGEX,.*steam.*
+PROCESS-NAME-REGEX,.*BsgLauncher.*
 
 
 # Try to fix game not starting
