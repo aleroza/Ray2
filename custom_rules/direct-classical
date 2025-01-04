@@ -27,6 +27,7 @@ PROCESS-NAME-REGEX,.*helldivers2.*
 PROCESS-NAME-REGEX,.*bfv.*
 PROCESS-NAME-REGEX,.*EscapeFromTarkov.*
 PROCESS-NAME-REGEX,.*PathOfExile.*
+PROCESS-NAME-REGEX,.*bf4.exe.*
 
 
 ## Programs
