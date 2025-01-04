@@ -19,24 +19,25 @@ DOMAIN,firebaseinstallations.googleapis.com
 
 
 ## Games
-PROCESS-NAME-REGEX,.*Warhammer.*
-PROCESS-NAME-REGEX,.*League.*
-PROCESS-NAME-REGEX,.*Riot\s?Client.*
-PROCESS-NAME-REGEX,.*SoTGame.*
-PROCESS-NAME-REGEX,.*helldivers2.*
-PROCESS-NAME-REGEX,.*bfv.*
-PROCESS-NAME-REGEX,.*EscapeFromTarkov.*
-PROCESS-NAME-REGEX,.*PathOfExile.*
-PROCESS-NAME-REGEX,.*bf4.exe.*
+PROCESS-NAME-REGEX,.*bf4.*                 # Battlefield 4
+PROCESS-NAME-REGEX,.*bfv.*                 # Battlefield 5
+PROCESS-NAME-REGEX,.*EscapeFromTarkov.*    # Escape from Tarkov
+PROCESS-NAME-REGEX,.*helldivers2.*         # Helldivers 2
+PROCESS-NAME-REGEX,.*League.*              # League of Legends
+PROCESS-NAME-REGEX,.*PathOfExile.*         # Path of Exile
+PROCESS-NAME-REGEX,.*SoTGame.*             # Sea of Thieves
+PROCESS-NAME-REGEX,.*Warhammer.*           # Warhammer 40K: Space Marines 2
 
 
 ## Programs
-PROCESS-NAME-REGEX,.*steam.*
-PROCESS-NAME-REGEX,.*BsgLauncher.*
+PROCESS-NAME-REGEX,.*steam.*               # Steam
+PROCESS-NAME-REGEX,.*BsgLauncher.*         # EfT (Launcher)
+PROCESS-NAME-REGEX,.*Riot\s?Client.*       # Riot Client
 
 
-# Try to fix game not starting
+# EA services
 PROCESS-NAME-REGEX,.*EAAntiCheat.*
 PROCESS-NAME-REGEX,.*EACefSubProcess.*
 PROCESS-NAME-REGEX,.*EADesktop.*
 PROCESS-NAME-REGEX,.*EABackgroundService.*
+PROCESS-NAME-REGEX,.*EALocalHostSvc.*
