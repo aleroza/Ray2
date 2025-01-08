@@ -61,18 +61,21 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
           source: "rks.dat"
-          target: "~/$COMPOSE_PATH/geodat"
+          target: "${{ vars.COMPOSE_PATH }}/geodat"
           overwrite: true
 
-      - name: Restart docker service
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USERNAME }}
-          password: ${{ secrets.PASSWORD }}
-          port: ${{ secrets.PORT }}
-          script_stop: true
-          envs: COMPOSE_PATH
-          script: |
-            cd ~/$COMPOSE_PATH || exit
-            docker compose restart
+      # Obsolete -- now using dir-mount of geodat folder to container
+      # - name: Restart docker service
+      #   uses: appleboy/ssh-action@master
+      #   env:
+      #     COMPOSE_PATH: ${{ vars.COMPOSE_PATH }}
+      #   with:
+      #     host: ${{ secrets.HOST }}
+      #     username: ${{ secrets.USERNAME }}
+      #     password: ${{ secrets.PASSWORD }}
+      #     port: ${{ secrets.PORT }}
+      #     script_stop: true
+      #     envs: COMPOSE_PATH
+      #     script: |
+      #       cd "$COMPOSE_PATH" || exit
+      #       docker compose restart marzban
