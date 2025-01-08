@@ -11,40 +11,40 @@ jobs:
       - name: Create backup and upload it to network
         uses: appleboy/ssh-action@master
         env:
-          RAYRAY_PATH: ${{ secrets.RAYRAY_PATH }}
+          COMPOSE_PATH: ${{ vars.COMPOSE_PATH }}
           STORAGE_API_ID: ${{ secrets.STORAGE_API_ID }}
           STORAGE_API_KEY: ${{ secrets.STORAGE_API_KEY }}
           BACKUP_ENCRYPTION_KEY: ${{ secrets.BACKUP_ENCRYPTION_KEY }}
+          BACKUP_DIR: "/opt/BACKUP_TEMP"
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
           script_stop: true
-          envs: RAYRAY_PATH,STORAGE_API_ID,STORAGE_API_KEY,BACKUP_ENCRYPTION_KEY
+          envs: COMPOSE_PATH,STORAGE_API_ID,STORAGE_API_KEY,BACKUP_ENCRYPTION_KEY,BACKUP_DIR
           script: |
             set -x
-            cd ~
             b2 account authorize $STORAGE_API_ID $STORAGE_API_KEY
-            sudo rm -rf BACKUP_TEMP
-            mkdir BACKUP_TEMP
-            cd ~/$RAYRAY_PATH
+            sudo rm -rf $BACKUP_DIR
+            mkdir $BACKUP_DIR
+
+            cd $COMPOSE_PATH
             docker-compose stop marzban
-            find ~/$RAYRAY_PATH -exec stat --format='%A %s %U %G %y %n' {} \; | grep -v 'prometheus_data' > ~/BACKUP_TEMP/status_file.txt
-            sudo rsync -av --progress ~/$RAYRAY_PATH/ ~/BACKUP_TEMP --exclude prometheus_data
+            find $COMPOSE_PATH -exec stat --format='%A %s %U %G %y %n' {} \; | grep -v 'prometheus_data' > $BACKUP_DIR/status_file.txt
+            sudo rsync -av --progress $COMPOSE_PATH/ $BACKUP_DIR --exclude prometheus_data
             docker-compose start marzban
-            
-            cd ~/BACKUP_TEMP
-            sudo tar -cf ./certs.tgz ./certs
-            sudo tar -cf ./var-lib-marz.tgz ./var-lib-marz
-      
-            sudo ccrypt ./certs.tgz -eK $BACKUP_ENCRYPTION_KEY
-            sudo ccrypt ./var-lib-marz.tgz -eK $BACKUP_ENCRYPTION_KEY
-            ccrypt ./.env -eK $BACKUP_ENCRYPTION_KEY
-      
+
+            cd $BACKUP_DIR
+            sudo tar -cf ./marzban.tgz ./marzban
+            sudo tar -cf ./marzban_data.tgz ./marzban_data
+
+            sudo ccrypt ./marzban.tgz -eK $BACKUP_ENCRYPTION_KEY
+            sudo ccrypt ./marzban_data.tgz -eK $BACKUP_ENCRYPTION_KEY
+
             time_stamp=$(date +%d-%m-%Y)
             mkdir -p "${time_stamp}"
-      
-            b2 sync --exclude-dir-regex "geodat|certs|var-lib-marz" ./ b2://ray2-backups/"${time_stamp}"
+
+            b2 sync --exclude-dir-regex "logs|geodat|marzban" ./ b2://ray2-backups/"${time_stamp}"
             cd ..
-            sudo rm -rf BACKUP_TEMP
+            sudo rm -rf $BACKUP_DIR
