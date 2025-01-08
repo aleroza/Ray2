@@ -61,7 +61,7 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
           source: "rks.dat"
-          target: "~/${{ COMPOSE_PATH }}/geodat"
+          target: "~/$COMPOSE_PATH/geodat"
           overwrite: true
 
       - name: Restart docker service
