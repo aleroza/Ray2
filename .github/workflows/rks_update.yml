@@ -61,13 +61,11 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
           source: "rks.dat"
-          target: "~/${{ secrets.COMPOSE_PATH }}/geodat"
+          target: "~/${{ COMPOSE_PATH }}/geodat"
           overwrite: true
 
       - name: Restart docker service
         uses: appleboy/ssh-action@master
-        env:
-          COMPOSE_PATH: ${{ secrets.COMPOSE_PATH }}
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
