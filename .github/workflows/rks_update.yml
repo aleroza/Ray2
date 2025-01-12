@@ -53,6 +53,12 @@ jobs:
           git commit -am "Update rublacklist domains -- $(date +%Y-%m-%d)"
           git push
 
+      - name: Knock
+        run: |
+          set -xe
+          sudo apt install -y knockd
+          knock -v ${{ secrets.HOST }} ${{ secrets.HOST_KNOCK_SEQ }}
+
       - name: Copy 
         uses: appleboy/scp-action@master
         with:

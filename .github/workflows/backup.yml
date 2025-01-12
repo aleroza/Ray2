@@ -8,6 +8,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Knock
+        run: |
+          sudo apt install knockd -y
+          knock ${{ secrets.HOST }} ${{ secrets.HOST_KNOCK_SEQ }}
+
       - name: Create backup and upload it to network
         uses: appleboy/ssh-action@master
         env:
