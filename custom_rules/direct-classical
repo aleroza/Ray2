@@ -27,7 +27,7 @@ PROCESS-NAME-REGEX,.*League.*
 PROCESS-NAME-REGEX,.*PathOfExile.*
 PROCESS-NAME-REGEX,.*SoTGame.*
 PROCESS-NAME-REGEX,.*Warhammer.*
-
+PROCESS-NAME,War.exe
 
 ## Programs
 PROCESS-NAME-REGEX,.*steam.*
