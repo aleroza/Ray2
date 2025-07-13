@@ -52,30 +52,3 @@ jobs:
           git config --global user.name "Autobot"
           git commit -am "Update rublacklist domains -- $(date +%Y-%m-%d)"
           git push
-
-      - name: Copy 
-        uses: appleboy/scp-action@master
-        with:
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USERNAME }}
-          password: ${{ secrets.PASSWORD }}
-          port: ${{ secrets.PORT }}
-          source: "rks.dat"
-          target: "${{ vars.COMPOSE_PATH }}/geodat"
-          overwrite: true
-
-      # Obsolete -- now using dir-mount of geodat folder to container
-      # - name: Restart docker service
-      #   uses: appleboy/ssh-action@master
-      #   env:
-      #     COMPOSE_PATH: ${{ vars.COMPOSE_PATH }}
-      #   with:
-      #     host: ${{ secrets.HOST }}
-      #     username: ${{ secrets.USERNAME }}
-      #     password: ${{ secrets.PASSWORD }}
-      #     port: ${{ secrets.PORT }}
-      #     script_stop: true
-      #     envs: COMPOSE_PATH
-      #     script: |
-      #       cd "$COMPOSE_PATH" || exit
-      #       docker compose restart marzban
