@@ -6,6 +6,8 @@ DOMAIN-SUFFIX,novel.tl
 DOMAIN-KEYWORD,mangalib
 DOMAIN-KEYWORD,imgslib
 DOMAIN-KEYWORD,mixlib
+DOMAIN-SUFFIX,cdnlibs.org
+DOMAIN-SUFFIX,imglib.info
 
 ## Players
 DOMAIN-KEYWORD,aniboom
