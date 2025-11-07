@@ -2,6 +2,8 @@ NETWORK,udp
 
 DOMAIN-SUFFIX,novel.tl
 
+DOMAIN-KEYWORD,kaspersky 
+
 # Mangalib
 DOMAIN-KEYWORD,mangalib
 DOMAIN-KEYWORD,imgslib
