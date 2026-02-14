@@ -5,3 +5,4 @@ DOMAIN-KEYWORD,googlevideo
 DOMAIN-SUFFIX,openai.com
 
 DOMAIN-KEYWORD,deckbrew
+PROCESS-NAME-REGEX,.*steamwebhelper.*
