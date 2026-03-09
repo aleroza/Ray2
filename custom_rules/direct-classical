@@ -22,7 +22,6 @@ PROCESS-NAME-REGEX,.*BF2042.*
 PROCESS-NAME-REGEX,.*bf6.*
 PROCESS-NAME-REGEX,.*EscapeFromTarkov.*
 PROCESS-NAME-REGEX,.*helldivers2.*
-PROCESS-NAME-REGEX,.*League.*
 PROCESS-NAME-REGEX,.*PathOfExile.*
 PROCESS-NAME-REGEX,.*SoTGame.*
 PROCESS-NAME-REGEX,.*Warhammer.*
@@ -31,8 +30,6 @@ PROCESS-NAME-REGEX,.*Foxfole.*
 ## Programs
 PROCESS-NAME-REGEX,.*steam.*
 PROCESS-NAME-REGEX,.*BsgLauncher.*
-PROCESS-NAME-REGEX,.*Riot\s?Client.*
-
 
 # EA services
 PROCESS-NAME-REGEX,.*EAAntiCheat.*

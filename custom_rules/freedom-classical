@@ -6,3 +6,12 @@ DOMAIN-SUFFIX,openai.com
 
 DOMAIN-KEYWORD,deckbrew
 PROCESS-NAME-REGEX,.*steamwebhelper.*
+
+## Games
+PROCESS-NAME-REGEX,.*League.*
+PROCESS-NAME,Marathon.exe
+
+## Programs
+PROCESS-NAME-REGEX,.*Riot\s?Client.*
+## Bungie Services
+PROCESS-NAME,BEService.exe
