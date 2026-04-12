@@ -26,6 +26,7 @@ PROCESS-NAME-REGEX,.*PathOfExile.*
 PROCESS-NAME-REGEX,.*SoTGame.*
 PROCESS-NAME-REGEX,.*Warhammer.*
 PROCESS-NAME-REGEX,.*Foxfole.*
+PROCESS-NAME-REGEX,League\sof\sLegends\.exe
 
 ## Programs
 PROCESS-NAME-REGEX,.*steam.*
