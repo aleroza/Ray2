@@ -8,7 +8,7 @@ DOMAIN-KEYWORD,deckbrew
 PROCESS-NAME-REGEX,.*steamwebhelper.*
 
 ## Games
-PROCESS-NAME-REGEX,.*League.*
+PROCESS-NAME-REGEX,LeagueClient.*
 PROCESS-NAME,Marathon.exe
 
 ## Programs
