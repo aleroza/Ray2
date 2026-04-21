@@ -1,3 +1,7 @@
+# TEST DETECTOR UTILS
+PROCESS-NAME,ru.netfreedom.proxybypass # https://github.com/runetfreedom/per-app-split-bypass-poc/releases/download/v1.0.0/split-bypass-poc.apk
+PROCESS-NAME,com.cherepavel.vpndetector # https://github.com/cherepavel/VPN-Detector/releases/download/v0.0.2/app-release.apk
+
 ### YANDEX ECOSYSTEM
 PROCESS-NAME-WILDCARD,ru.yandex*       # Yandex (Maps, Music, Taxi, Navigator, Drive, etc.)
 PROCESS-NAME-WILDCARD,com.yandex*      # Yandex Browser, Yandex Pay
