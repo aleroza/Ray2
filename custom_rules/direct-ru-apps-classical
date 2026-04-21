@@ -1,3 +1,6 @@
+PROCESS-NAME-WILDCARD,ru.dublgis*
+
+
 ### YANDEX ECOSYSTEM
 PROCESS-NAME-REGEX,ru\.yandex.*       # Yandex (Maps, Music, Taxi, Navigator, Drive, etc.)
 PROCESS-NAME-REGEX,com\.yandex.*      # Yandex Browser, Yandex Pay
