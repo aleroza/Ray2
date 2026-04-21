@@ -1,4 +1,4 @@
-PROCESS-NAME-REGEX,ru\.dublgis.*
+PROCESS-NAME-WILDCARD,ru.dublgis*
 
 
 ### YANDEX ECOSYSTEM
