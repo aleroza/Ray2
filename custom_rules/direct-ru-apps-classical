@@ -1,4 +1,4 @@
-PROCESS-NAME-REGEX,ru.dublgis.*
+PROCESS-NAME-REGEX,ru\\.dublgis.*
 
 
 ### YANDEX ECOSYSTEM
