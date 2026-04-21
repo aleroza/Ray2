@@ -1,4 +1,4 @@
-PROCESS-NAME-WILDCARD,ru.dublgis*
+PROCESS-NAME-REGEX,ru\.dublgis.*
 
 
 ### YANDEX ECOSYSTEM
@@ -66,8 +66,8 @@ PROCESS-NAME-REGEX,com\.vprok.*    # Vprok / Perekrestok
 PROCESS-NAME-REGEX,ru\.5ka.*       # Pyaterochka (5ka)
 
 ### MAPS / NAVIGATION
-PROCESS-NAME,ru.dublgis.dgismobile  # 2GIS
-PROCESS-NAME-REGEX,com\.2gis.*    # 2GIS (alternate)
+#PROCESS-NAME,ru.dublgis.dgismobile  # 2GIS
+#PROCESS-NAME-REGEX,com\.2gis.*    # 2GIS (alternate)
 
 ### UTILITY / TRAVEL / SERVICES
 PROCESS-NAME-REGEX,ru\.rzd.*       # RZD Passengers (Russian Railways)
