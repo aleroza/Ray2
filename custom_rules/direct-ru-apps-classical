@@ -1,0 +1,94 @@
+### YANDEX ECOSYSTEM
+PROCESS-NAME-REGEX,ru\.yandex.*       # Yandex (Maps, Music, Taxi, Navigator, Drive, etc.)
+PROCESS-NAME-REGEX,com\.yandex.*      # Yandex Browser, Yandex Pay
+
+### VK (VKONTAKTE)
+PROCESS-NAME-REGEX,com\.vkontakte.*   # VK social network
+PROCESS-NAME-REGEX,com\.vk\.vkvideo      # VK Video (streaming)
+PROCESS-NAME-REGEX,com\.uma\.musicvk     # VK Music
+PROCESS-NAME-REGEX,com\.vklife\.vkads   # VK Ads
+PROCESS-NAME-REGEX,ru\.oneme\.app       # MAX messenger
+
+### MAIL.RU GROUP
+PROCESS-NAME-REGEX,ru\.mail.*         # Mail.ru (mail, cloud, myapps, etc.)
+
+### STREAMING / CINEMA
+PROCESS-NAME-REGEX,ru\.kinopoisk.*    # Kinopoisk
+PROCESS-NAME-REGEX,ru\.ivi\.client      # IVI
+PROCESS-NAME-REGEX,ru\.more\.play       # Okko
+PROCESS-NAME-REGEX,com\.wink\.rt         # Wink (Rostelecom streaming)
+PROCESS-NAME-REGEX,ru\.rutube\.app      # Rutube
+
+### SOCIAL / OK
+PROCESS-NAME-REGEX,ru\.ok.*            # Odnoklassniki
+
+### FINANCE / BANKING
+PROCESS-NAME-REGEX,ru\.sber.*    # Sberbank Online
+PROCESS-NAME-REGEX,com\.sber.*    # Sberbank Assistant (Salute)
+PROCESS-NAME-REGEX,com\.idamob.*  # Tinkoff Bank
+PROCESS-NAME-REGEX,ru\.alfabank.*  # Alfa-Bank
+PROCESS-NAME-REGEX,ru\.vtb.*       # VTB Online
+PROCESS-NAME-REGEX,ru\.raiffeisen.*   # Raiffeisen News
+PROCESS-NAME-REGEX,ru\.gazprom.* # Gazprombank
+PROCESS-NAME-REGEX,com\.openbank.*         # Otkritie Bank
+PROCESS-NAME-REGEX,ru\.rshb.*      # Rosselkhozbank
+PROCESS-NAME-REGEX,com\.psbstudio.*  # PIBank (Postbank)
+
+### GOVERNMENT SERVICES
+PROCESS-NAME-REGEX,ru\.rostel.*        # Gosuslugi (published by Rostelecom)
+PROCESS-NAME-REGEX,ru\.gosuslugi.*    # Gosuslugi Reshaem Vmeste
+PROCESS-NAME-REGEX,com\.dartit.*       # Rostelecom personal account (RTcabinet)
+PROCESS-NAME-REGEX,ru\.sigma.*          # Gosuslugi Dom
+
+### TELECOM OPERATORS (state-linked)
+PROCESS-NAME-REGEX,ru\.mts.*           # MTS
+PROCESS-NAME-REGEX,ru\.megafon.*       # MegaFon
+PROCESS-NAME-REGEX,ru\.rostelecom.*   # Rostelecom telecom
+
+### E-COMMERCE / MARKETPLACE
+PROCESS-NAME-REGEX,com\.wildberries.*  # Wildberries
+PROCESS-NAME-REGEX,ru\.ozon.*  # Ozon
+PROCESS-NAME-REGEX,com\.avito.*   # Avito
+PROCESS-NAME-REGEX,com\.allgoritm.*  # Yula (VK-owned)
+PROCESS-NAME-REGEX,ru\.lamoda.*    # Lamoda
+PROCESS-NAME-REGEX,ru\.megamarket.*  # Megamarket
+PROCESS-NAME-REGEX,com\.kazanexpress.*      # KazanExpress
+
+### DELIVERY / FOOD
+PROCESS-NAME-REGEX,com\.samokat.*  # Samokat courier
+PROCESS-NAME-REGEX,com\.apegroup.*  # Vkusno i Tochka
+PROCESS-NAME-REGEX,ru\.magnit.*     # Magnit Market
+PROCESS-NAME-REGEX,ru\.dixy.*      # Dixy
+PROCESS-NAME-REGEX,com\.vprok.*    # Vprok / Perekrestok
+PROCESS-NAME-REGEX,ru\.5ka.*       # Pyaterochka (5ka)
+
+### MAPS / NAVIGATION
+PROCESS-NAME-REGEX,ru\.dublgis.*       # 2GIS
+PROCESS-NAME-REGEX,com\.2gis.*    # 2GIS (alternate)
+
+### UTILITY / TRAVEL / SERVICES
+PROCESS-NAME-REGEX,ru\.rzd.*       # RZD Passengers (Russian Railways)
+PROCESS-NAME-REGEX,ru\.aviasales.*  # Aviasales
+PROCESS-NAME-REGEX,com\.headhunter.*    # HeadHunter
+PROCESS-NAME-REGEX,ru\.cian.*      # Cian (real estate)
+PROCESS-NAME-REGEX,ru\.parking.*   # Parking Russia
+PROCESS-NAME-REGEX,ru\.tinkoff.*       # Tinkoff transfers
+
+### SECURITY / ANTIVIRUS
+PROCESS-NAME-REGEX,com\.kaspersky.*     # Kaspersky
+PROCESS-NAME-REGEX,com\.drweb.*        # Doctor Web
+
+### BUSINESS SOFTWARE
+PROCESS-NAME-REGEX,com\.e1c.*           # 1C business software
+PROCESS-NAME-REGEX,ru\.saby.*       # Saby (1C subsidiary)
+
+### APP STORES
+PROCESS-NAME-REGEX,com\.rustore.*  # RuStore
+
+### AUDIOBOOKS / READING
+PROCESS-NAME-REGEX,com\.litres.*    # Litres
+PROCESS-NAME-REGEX,com\.bookmate.*      # Bookmate
+
+### GAMES (Russian platforms)
+PROCESS-NAME-REGEX,ru\.vkplay.*     # VK Play games
+PROCESS-NAME-REGEX,com\.mygames.*    # My.Games (VK gaming)
