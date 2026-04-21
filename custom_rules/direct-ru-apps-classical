@@ -63,7 +63,7 @@ PROCESS-NAME-REGEX,com\.vprok.*    # Vprok / Perekrestok
 PROCESS-NAME-REGEX,ru\.5ka.*       # Pyaterochka (5ka)
 
 ### MAPS / NAVIGATION
-PROCESS-NAME-REGEX,ru\.dublgis.*       # 2GIS
+PROCESS-NAME-REGEX,ru.dublgis.*       # 2GIS
 PROCESS-NAME-REGEX,com\.2gis.*    # 2GIS (alternate)
 
 ### UTILITY / TRAVEL / SERVICES
