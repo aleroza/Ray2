@@ -28,9 +28,9 @@ PROCESS-NAME-REGEX,.*Warhammer.*
 PROCESS-NAME-REGEX,.*Foxfole.*
 PROCESS-NAME-REGEX,League\sof\sLegends\.exe
 PROCESS-NAME-REGEX,.*PioneerGame.*
-PROCESS-NAME,PnkBstrA.exe,DIRECT
-PROCESS-NAME,pbsvc.exe,DIRECT
-PROCESS-NAME,FSD-Win64-Shipping.exe,DIRECT
+PROCESS-NAME,PnkBstrA.exe
+PROCESS-NAME,pbsvc.exe
+PROCESS-NAME,FSD-Win64-Shipping.exe
 
 ## Programs
 PROCESS-NAME-REGEX,.*steam.*
