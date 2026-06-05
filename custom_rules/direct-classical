@@ -42,3 +42,6 @@ PROCESS-NAME-REGEX,.*EACefSubProcess.*
 PROCESS-NAME-REGEX,.*EADesktop.*
 PROCESS-NAME-REGEX,.*EABackgroundService.*
 PROCESS-NAME-REGEX,.*EALocalHostSvc.*
+
+# Other
+DOMAIN-SUFFIX,appsflyer.com
