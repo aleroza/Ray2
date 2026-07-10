@@ -45,3 +45,4 @@ PROCESS-NAME-REGEX,.*EALocalHostSvc.*
 
 # Other
 DOMAIN-SUFFIX,appsflyer.com
+DOMAIN-SUFFIX,zeydoo.com
