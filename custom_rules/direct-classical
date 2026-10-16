@@ -32,6 +32,7 @@ PROCESS-NAME-REGEX,.*PioneerGame.*
 PROCESS-NAME,PnkBstrA.exe
 PROCESS-NAME,pbsvc.exe
 PROCESS-NAME,FSD-Win64-Shipping.exe
+PROCESS-NAME-REGEX,.*Titanfall2.*
 
 ## Programs
 PROCESS-NAME-REGEX,.*steam.*
